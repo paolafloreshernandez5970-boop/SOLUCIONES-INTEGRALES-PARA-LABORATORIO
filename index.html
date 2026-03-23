@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soluciones Integrales para Laboratorio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>SOLUCIONES INTEGRALES PARA LABORATORIO</h1>
+        <p>Comercializadora Especializada | Puebla</p>
+    </header>
+
+    <nav>
+        <a href="javascript:void(0)" onclick="volverAlCatalogo()">Inicio / Catálogo</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+    <main>
+        <section id="productos">
+            <h2 style="text-align:center; color:#0055a4;">Nuestro Catálogo</h2>
+            <p style="text-align:center;">Selecciona una categoría para ver productos y precios:</p>
+            <div class="contenedor-productos">
+
+                <div class="tarjeta" onclick="mostrarSeccion('detalle-reactivos')">
+                    <img src="reactivos.jpg" alt="Reactivos">
+                    <h3>Reactivos</h3>
+                    <p>Click para ver lista</p>
+                </div>
+
+                <div class="tarjeta" onclick="mostrarSeccion('detalle-vidrieria')">
+                    <img src="vidrieria.jpg" alt="Vidriería">
+                    <h3>Vidriería</h3>
+                    <p>Click para ver lista</p>
+                </div>
+
+                <div class="tarjeta" onclick="mostrarSeccion('detalle-equipos')">
+                    <img src="equipos.jpg" alt="Equipos">
+                    <h3>Equipos e Instrumentos</h3>
+                    <p>Click para ver lista</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="detalle-reactivos" class="seccion-detalle">
+            <button class="btn-cerrar" onclick="volverAlCatalogo()">✖ Cerrar y volver</button>
+            <h2>Catálogo de Reactivos</h2>
+            <table>
+                <thead>
+                    <tr><th>Producto</th><th>Presentación</th><th>Precio</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Alcohol Isopropílico</td><td>1 L</td><td>$180.00</td></tr>
+                    <tr><td>Ácido Sulfúrico</td><td>500 ml</td><td>$350.00</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="detalle-vidrieria" class="seccion-detalle">
+            <button class="btn-cerrar" onclick="volverAlCatalogo()">✖ Cerrar y volver</button>
+            <h2>Catálogo de Vidriería</h2>
+            <table>
+                <thead>
+                    <tr><th>Producto</th><th>Capacidad</th><th>Precio</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Matraz Erlenmeyer</td><td>250 ml</td><td>$145.00</td></tr>
+                    <tr><td>Vaso de Precipitado</td><td>500 ml</td><td>$110.00</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="detalle-equipos" class="seccion-detalle">
+            <button class="btn-cerrar" onclick="volverAlCatalogo()">✖ Cerrar y volver</button>
+            <h2>Equipos e Instrumentos</h2>
+            <table>
+                <thead>
+                    <tr><th>Equipo</th><th>Marca</th><th>Precio</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Balanza Analítica</td><td>Ohaus</td><td>$12,500.00</td></tr>
+                    <tr><td>Microscopio Binocular</td><td>Velab</td><td>$8,900.00</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <section id="contacto" class="seccion-contacto" style="padding: 40px; background-color: white;">
+        <h2 style="text-align: center; color: #0055a4;">Solicitar Cotización Formal</h2>
+
+        <div style="max-width: 500px; margin: 0 auto;">
+            <form id="form-cotizacion" class="formulario">
+                <input type="text" id="nombre" placeholder="Nombre o Empresa" required style="width: 100%; padding: 10px; margin-bottom: 10px;">
+
+                <input type="email" id="email" placeholder="Correo electrónico" required style="width: 100%; padding: 10px; margin-bottom: 10px;">
+
+                <textarea id="mensaje" placeholder="Escribe aquí los productos que necesitas (Reactivos, Vidriería, etc.)..." rows="4" style="width: 100%; padding: 10px; margin-bottom: 10px;"></textarea>
+
+                <button type="button" onclick="enviarFormulario()" style="background-color: #25d366; color: white; border: none; padding: 15px; border-radius: 5px; cursor: pointer; font-weight: bold; width: 100%; font-size: 16px;">
+                    🚀 Enviar Cotización a WhatsApp
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Soluciones Integrales para Laboratorio | Cholula, Puebla</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

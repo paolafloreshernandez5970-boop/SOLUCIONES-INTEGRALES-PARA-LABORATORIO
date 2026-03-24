@@ -9,44 +9,87 @@
 <body>
 
     <header>
-        <h1>SOLUCIONES INTEGRALES PARA LABORATORIO</h1>
-        <p>Comercializadora Especializada | Puebla</p>
+        <img src="logo.png" alt="Logo Soluciones Integrales">
     </header>
 
     <nav>
-        <a href="javascript:void(0)" onclick="volverAlCatalogo()">Inicio / Catálogo</a>
-        <a href="#contacto">Contacto</a>
+        <a href="javascript:void(0)" onclick="mostrarSeccion('inicio')">Inicio</a>
+        <a href="javascript:void(0)" onclick="mostrarSeccion('productos')">Catálogo</a>
+        <a href="javascript:void(0)" onclick="mostrarSeccion('contacto')">Contacto</a>
     </nav>
 
     <main>
-        <section id="productos">
-            <h2 style="text-align:center; color:#0055a4;">Nuestro Catálogo</h2>
-            <p style="text-align:center;">Selecciona una categoría para ver productos y precios:</p>
-            <div class="contenedor-productos">
+        <section id="inicio" class="seccion-contenido">
+            <div class="bienvenida">
+                <h1>Bienvenido a Soluciones Integrales para Laboratorio</h1>
+                <p>Tu aliado estratégico en suministros científicos en Puebla y Cholula.</p>
+            </div>
 
-                <div class="tarjeta" onclick="mostrarSeccion('detalle-reactivos')">
+            <div class="contenedor-grid">
+                <div class="bloque-info tarjeta-efecto">
+                    <div class="icono-tarjeta">🚀</div>
+                    <h2>Misión</h2>
+                    <p>Proveer soluciones de alta calidad en equipos y reactivos, impulsando el desarrollo científico con servicio personalizado.</p>
+                </div>
+                <div class="bloque-info tarjeta-efecto">
+                    <div class="icono-tarjeta">👁️</div>
+                    <h2>Visión</h2>
+                    <p>Ser la comercializadora líder y más confiable en el sector de laboratorios a nivel regional para el 2030.</p>
+                </div>
+            </div>
+
+            <div class="valores-mosaico">
+                <h2>Nuestros Valores Fundamentales</h2>
+                <div class="grid-valores">
+                    <div class="valor-item">
+                        <span class="icono-valor">⚖️</span>
+                        <h3>Integridad</h3>
+                        <p>Actuamos con honestidad y transparencia en cada proceso.</p>
+                    </div>
+                    <div class="valor-item">
+                        <span class="icono-valor">💡</span>
+                        <h3>Innovación</h3>
+                        <p>Buscamos constantemente las mejores soluciones tecnológicas.</p>
+                    </div>
+                    <div class="valor-item">
+                        <span class="icono-valor">🤝</span>
+                        <h3>Compromiso</h3>
+                        <p>Dedicación total al éxito y necesidades de nuestros clientes.</p>
+                    </div>
+                    <div class="valor-item">
+                        <span class="icono-valor">🔬</span>
+                        <h3>Calidad Científica</h3>
+                        <p>Garantizamos productos que cumplen los más altos estándares.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="productos" class="seccion-contenido" style="display: none;">
+            <div class="titulo-catalogo">
+                <h2>Nuestro Catálogo</h2>
+            </div>
+            <div class="contenedor-productos">
+                <div class="tarjeta" onclick="mostrarDetalle('detalle-reactivos')">
                     <img src="reactivos.jpg" alt="Reactivos">
                     <h3>Reactivos</h3>
                     <p>Click para ver lista</p>
                 </div>
-
-                <div class="tarjeta" onclick="mostrarSeccion('detalle-vidrieria')">
+                <div class="tarjeta" onclick="mostrarDetalle('detalle-vidrieria')">
                     <img src="vidrieria.jpg" alt="Vidriería">
                     <h3>Vidriería</h3>
                     <p>Click para ver lista</p>
                 </div>
-
-                <div class="tarjeta" onclick="mostrarSeccion('detalle-equipos')">
+                <div class="tarjeta" onclick="mostrarDetalle('detalle-equipos')">
                     <img src="equipos.jpg" alt="Equipos">
                     <h3>Equipos e Instrumentos</h3>
                     <p>Click para ver lista</p>
                 </div>
-
             </div>
         </section>
 
-        <section id="detalle-reactivos" class="seccion-detalle">
-            <button class="btn-cerrar" onclick="volverAlCatalogo()">✖ Cerrar y volver</button>
+        <section id="detalle-reactivos" class="seccion-detalle" style="display: none;">
+            <button class="btn-cerrar" onclick="mostrarSeccion('productos')">✖ Cerrar y volver</button>
             <h2>Catálogo de Reactivos</h2>
             <table>
                 <thead>
@@ -59,60 +102,29 @@
             </table>
         </section>
 
-        <section id="detalle-vidrieria" class="seccion-detalle">
-            <button class="btn-cerrar" onclick="volverAlCatalogo()">✖ Cerrar y volver</button>
-            <h2>Catálogo de Vidriería</h2>
-            <table>
-                <thead>
-                    <tr><th>Producto</th><th>Capacidad</th><th>Precio</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>Matraz Erlenmeyer</td><td>250 ml</td><td>$145.00</td></tr>
-                    <tr><td>Vaso de Precipitado</td><td>500 ml</td><td>$110.00</td></tr>
-                </tbody>
-            </table>
-        </section>
+        <section id="contacto" class="seccion-contenido" style="display: none;">
+            <h2>Contacto y Ubicación</h2>
+            <div class="contacto-flex">
+                <div class="whatsapp-box">
+                    <h3>Solicitar Cotización</h3>
+                    <div class="formulario">
+                        <input type="text" id="nombre" placeholder="Nombre o Empresa">
+                        <textarea id="mensaje" placeholder="¿Qué productos necesitas?"></textarea>
+                        <button class="btn-whatsapp" onclick="enviarFormulario()">🚀 Enviar a WhatsApp</button>
+                    </div>
+                </div>
 
-        <section id="detalle-equipos" class="seccion-detalle">
-            <button class="btn-cerrar" onclick="volverAlCatalogo()">✖ Cerrar y volver</button>
-            <h2>Equipos e Instrumentos</h2>
-            <table>
-                <thead>
-                    <tr><th>Equipo</th><th>Marca</th><th>Precio</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>Balanza Analítica</td><td>Ohaus</td><td>$12,500.00</td></tr>
-                    <tr><td>Microscopio Binocular</td><td>Velab</td><td>$8,900.00</td></tr>
-                </tbody>
-            </table>
+                <div class="direccion-box">
+                    <h3>📍 Ubicación</h3>
+                    <p>Calle Principal S/N, San Andrés Cholula, Puebla.</p>
+                    <p><em>Atención previa cita para entregas personales.</em></p>
+                </div>
+            </div>
         </section>
-
     </main>
 
-    <section id="contacto" class="seccion-contacto" style="padding: 40px; background-color: white;">
-        <h2 style="text-align: center; color: #0055a4;">Solicitar Cotización Formal</h2>
-
-        <div style="max-width: 500px; margin: 0 auto;">
-            <form id="form-cotizacion" class="formulario">
-                <input type="text" id="nombre" placeholder="Nombre o Empresa" required style="width: 100%; padding: 10px; margin-bottom: 10px;">
-
-                <input type="email" id="email" placeholder="Correo electrónico" required style="width: 100%; padding: 10px; margin-bottom: 10px;">
-
-                <textarea id="mensaje" placeholder="Escribe aquí los productos que necesitas (Reactivos, Vidriería, etc.)..." rows="4" style="width: 100%; padding: 10px; margin-bottom: 10px;"></textarea>
-
-                <button type="button" onclick="enviarFormulario()" style="background-color: #25d366; color: white; border: none; padding: 15px; border-radius: 5px; cursor: pointer; font-weight: bold; width: 100%; font-size: 16px;">
-                    🚀 Enviar Cotización a WhatsApp
-                </button>
-            </form>
-        </div>
-    </section>
-
     <footer>
-        <p>&copy; 2026 Soluciones Integrales para Laboratorio | Cholula, Puebla</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
+        <p>&copy; 2026 Soluciones Integrales para Laboratorio</p>
     </footer>
 
     <script src="script.js"></script>
